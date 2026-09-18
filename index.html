@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conversor de temperaturas entre Celsius, Fahrenheit y Kelvin.">
+  <title>Conversor de Temperaturas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="converter-card" aria-labelledby="page-title">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">°</div>
+        <div>
+          <p class="eyebrow">Herramienta rápida y precisa</p>
+          <h1 id="page-title">Conversor de Temperaturas</h1>
+          <p class="subtitle">Convierte fácilmente entre Celsius, Fahrenheit y Kelvin.</p>
+        </div>
+      </header>
+
+      <form id="converter-form" novalidate>
+        <div class="field-group">
+          <label for="temperature-input">Temperatura</label>
+          <div class="input-wrap">
+            <input id="temperature-input" name="temperature" type="number" inputmode="decimal" step="any" placeholder="Ej. 25" autocomplete="off" aria-describedby="input-help error-message">
+            <span class="input-unit" id="input-unit" aria-hidden="true">°C</span>
+          </div>
+          <p class="field-help" id="input-help">Escribe un valor y elige las unidades.</p>
+          <p class="error-message" id="error-message" role="alert" aria-live="assertive"></p>
+        </div>
+
+        <div class="unit-row">
+          <div class="field-group">
+            <label for="from-unit">Convertir de</label>
+            <select id="from-unit" name="from-unit">
+              <option value="C">Celsius (°C)</option>
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+          <button class="icon-button" id="swap-button" type="button" title="Intercambiar unidades" aria-label="Intercambiar unidades">⇄</button>
+          <div class="field-group">
+            <label for="to-unit">Convertir a</label>
+            <select id="to-unit" name="to-unit">
+              <option value="F">Fahrenheit (°F)</option>
+              <option value="C">Celsius (°C)</option>
+              <option value="K">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary-button" type="submit"><span aria-hidden="true">↗</span> Convertir</button>
+          <button class="secondary-button" id="clear-button" type="button"><span aria-hidden="true">↺</span> Limpiar</button>
+        </div>
+      </form>
+
+      <section class="result-panel" id="result-panel" aria-labelledby="result-title" aria-live="polite">
+        <p class="result-label" id="result-title">Resultado</p>
+        <p class="result-value" id="result-value">—</p>
+        <p class="result-caption" id="result-caption">Ingresa una temperatura para comenzar.</p>
+        <div class="temperature-status status-neutral" id="temperature-status">
+          <span class="status-icon" aria-hidden="true">◌</span>
+          <span id="status-text">Esperando un valor</span>
+        </div>
+      </section>
+
+      <div class="info-grid">
+        <section class="info-card" aria-labelledby="formulas-title">
+          <h2 id="formulas-title">Fórmulas de conversión</h2>
+          <ul class="formula-list">
+            <li><span>°C → °F</span><code>(°C × 9/5) + 32</code></li>
+            <li><span>°F → °C</span><code>(°F − 32) × 5/9</code></li>
+            <li><span>°C ↔ K</span><code>°C + 273.15</code></li>
+          </ul>
+        </section>
+        <aside class="info-card fact-card" aria-labelledby="fact-title">
+          <span class="fact-icon" aria-hidden="true">✦</span>
+          <div><h2 id="fact-title">¿Sabías que?</h2><p>El kelvin es una escala absoluta: 0 K representa el cero absoluto.</p></div>
+        </aside>
+      </div>
+    </section>
+    <footer>Conversor de Temperaturas · HTML, CSS y JavaScript Vanilla</footer>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
